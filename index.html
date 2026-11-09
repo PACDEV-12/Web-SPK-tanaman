@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SPK Pemilihan Tanaman Lahan - Metode SAW (Kelompok III)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="side" id="side">
+    <div class="brand"><strong>SPK Tanaman</strong><span>Pemilihan tanaman lahan, metode SAW</span></div>
+    <nav id="nav" aria-label="Menu utama"></nav>
+    <div class="side-foot">
+      <button id="tema" class="btn s" type="button">Mode gelap</button>
+    </div>
+  </aside>
+  <div class="content">
+    <header class="topbar">
+      <button id="menu" class="btn s" type="button" aria-label="Buka atau tutup menu">Menu</button>
+      <div class="ttl"><small>Sistem Pendukung Keputusan</small><h2 id="judul"></h2></div>
+    </header>
+    <main id="main"></main>
+    <footer>Tugas Project SPK, Kelompok III. Semua data di halaman ini data simulasi.</footer>
+  </div>
+</div>
+<div id="scrim"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="dlg">
+  <form id="frm" onsubmit="simpanLahan(event)">
+    <h3 id="dlgJudul">Tambah lahan</h3>
+    <div class="fgrid">
+      <label>ID lahan<input id="fi" required></label>
+      <label>Zona<select id="fz"><option>Zona A</option><option>Zona B</option><option>Zona C</option><option>Zona D</option></select></label>
+      <label>Jenis tanah<select id="ft"><option>liat</option><option>lempung</option><option>lempung_berpasir</option><option>berpasir</option></select></label>
+      <label>pH tanah<input id="fp" type="number" step="0.1" min="0" max="14" required></label>
+      <label>Air (mm/musim)<input id="fa" type="number" min="0" required></label>
+      <label>Suhu rata-rata (°C)<input id="fs" type="number" step="0.1" required></label>
+      <label>Ketinggian (m dpl)<input id="fh" type="number" min="0" required></label>
+      <label>Luas (ha)<input id="fl" type="number" step="0.01" min="0.01" required></label>
+    </div>
+    <div class="row end"><button class="btn s" type="button" onclick="document.getElementById('dlg').close()">Batal</button><button class="btn b-ok" type="submit">Simpan</button></div>
+  </form>
+</dialog>
+<script src="data.js"></script>
+<script src="saw.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
